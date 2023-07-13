@@ -101,9 +101,6 @@ yarn typeorm migration:generate ./src/database/migrations/MySQLMigrations
 
 These steps may work for [other databases](https://typeorm.io/#features) supported by TypeORM. If they work, let us know and we'll add it to the docs!
 
-##### Docker Compose
-After completing the steps above, you can use [this docker-compose file](../docker-compose_mysql.yml) for awesome-nest-boilerplate with MySQL (instead of PostgreSQL).
-
 ### Dev server
 
 > Note: If you're on Linux and see an `ENOSPC` error when running the commands below, you must [increase the number of available file watchers](https://stackoverflow.com/questions/22475849/node-js-error-enospc#answer-32600959).
