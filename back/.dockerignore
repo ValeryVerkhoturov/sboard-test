@@ -6,3 +6,4 @@ db-data
 .vscode
 docs
 .env
+.env.*
