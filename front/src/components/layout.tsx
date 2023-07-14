@@ -72,3 +72,14 @@ export const Hamburger = styled.img`
     display: none;
   }
 `
+
+export const StyledLink = styled.a`
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;

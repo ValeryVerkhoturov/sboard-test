@@ -40,3 +40,38 @@ export const deletePost = async (postId: string, token: string) => {
     return
 }
 
+const createPostRoute = '/api/posts/'
+export type GetPostsRequest = {
+    title: string
+    description: string
+}
+export const createPost = async (req: GetPostsRequest, token: string) => {
+    'use client'
+
+    const body = JSON.stringify({
+        "title": [
+            {
+                "languageCode": "ru_RU",
+                "text": req.title
+            }
+        ],
+        "description": [
+            {
+                "languageCode": "ru_RU",
+                "text": req.description
+            }
+        ]
+    })
+    const res = await fetch(createPostRoute,
+        {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "accept": "application/json",
+                'Authorization': `Bearer ${token}`
+            },
+            body
+        })
+    return
+}
+
