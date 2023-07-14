@@ -15,7 +15,7 @@ const UserPage: React.FC = () => {
        if (!token) {
            router.push('/login')
        }
-    }, [token])
+    }, [token, router])
 
     return (
         <div>

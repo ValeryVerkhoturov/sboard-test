@@ -21,7 +21,7 @@ const UpdatePostForm: React.FC<{ params: { postId: string } }> = ({ params }) =>
         if (!token) {
             router.push('/login')
         }
-    }, [token])
+    }, [token, router])
 
     const onSubmit = async (data: FormData) => {
         await deletePost(params.postId, token!)

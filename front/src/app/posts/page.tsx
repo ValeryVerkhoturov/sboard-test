@@ -18,17 +18,16 @@ const Posts: React.FC = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             setPosts((await getPosts(token!)).data);
-            console.log(await getPosts(token!));
         }
 
         fetchPosts()
-    }, [])
+    }, [token])
 
     useEffect(() => {
         if (!token) {
             router.push('/login')
         }
-    }, [token])
+    }, [token, router])
 
     const edtPost = (postId: string) => {
         return () => {

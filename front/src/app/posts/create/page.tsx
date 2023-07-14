@@ -21,7 +21,7 @@ const CreatePostForm: React.FC = () => {
         if (!token) {
             router.push('/login')
         }
-    }, [token])
+    }, [token, router])
 
     const onSubmit = async (data: FormData) => {
         await createPost({title: data.title, description: data.description}, token!)
