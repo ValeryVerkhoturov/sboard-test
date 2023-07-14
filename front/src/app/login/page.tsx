@@ -3,7 +3,7 @@
 import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 import {PrimaryButton, ErrorLabel, Form, FormContainer, Input} from "@/components/form";
-import {login, LoginResponse} from "@/utils/api";
+import {login, LoginResponse} from "@/utils/api/login";
 import {useTokenStore} from "@/utils/store/token-store";
 import {useUserStore} from "@/utils/store/user-store";
 import {useRouter} from "next/navigation";

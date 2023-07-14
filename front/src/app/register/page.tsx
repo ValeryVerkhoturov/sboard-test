@@ -3,9 +3,8 @@
 import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 import {PrimaryButton, ErrorLabel, Form, FormContainer, Input, Label, Button} from "@/components/form";
-import {register as registerApi, RegisterResponse} from "@/utils/api";
+import {register as registerApi, RegisterResponse} from "@/utils/api/register";
 import {useRouter} from "next/navigation";
-import Link from "next/link";
 
 interface RegistrationFormData {
     firstName: string;

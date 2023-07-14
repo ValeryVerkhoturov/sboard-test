@@ -2,7 +2,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import {LoginResponse} from "@/utils/api";
+import {LoginResponse} from "@/utils/api/login";
 
 // Create a styled container for the user info page
 const UserInfoContainer = styled.div`

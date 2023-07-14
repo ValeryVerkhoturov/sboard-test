@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
-import {LoginResponse} from "@/utils/api";
+import {LoginResponse} from "@/utils/api/login";
 
 export type User = LoginResponse['user'] | undefined
 interface UserState {
