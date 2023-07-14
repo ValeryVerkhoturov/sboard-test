@@ -30,9 +30,23 @@ export const NavLi = styled.li`
   margin: 15px auto;
 `
 export const NavLink = styled.a`
+  text-decoration: none;
   list-style-type: none;
   display: flex;
   flex-direction: column;
+  @media (min-width: 768px) {    
+    margin: 0px 10px;
+  }
+`
+export const NavButton = styled.button`
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  height: 20px;
+  color: blue;
+  background: none;
+  border: none;
+  font-size: 18px;
   @media (min-width: 768px) {    
     margin: 0px 10px;
   }
