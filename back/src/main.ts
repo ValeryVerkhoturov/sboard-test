@@ -31,6 +31,11 @@ export async function bootstrap(): Promise<NestExpressApplication> {
     new ExpressAdapter(),
     { cors: true },
   );
+  app.enableCors({
+    allowedHeaders: ['content-type'],
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+  });
   app.enable('trust proxy'); // only if you're behind a reverse proxy (Heroku, Bluemix, AWS ELB, Nginx, etc)
   app.use(helmet());
   // app.setGlobalPrefix('/api'); use api as global prefix if you don't have subdomain

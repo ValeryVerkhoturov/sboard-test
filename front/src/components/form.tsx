@@ -19,9 +19,18 @@ export const Input = styled.input`
   margin-bottom: 10px;
 `;
 
-export const Button = styled.button`
+export const PrimaryButton = styled.button`
   padding: 10px 20px;
   background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+`;
+
+export const Button = styled.button`
+  margin: 3px;
+  padding: 10px 20px;
+  background-color: #fca5a5;
   color: #ffffff;
   border: none;
   cursor: pointer;
@@ -30,3 +39,9 @@ export const Button = styled.button`
 export const Label = styled.label`
   margin-bottom: 8px;
 `;
+
+export const ErrorLabel = styled.div`
+  padding: 5px;
+  color: #ff0000;
+  font-size: 10px;
+`

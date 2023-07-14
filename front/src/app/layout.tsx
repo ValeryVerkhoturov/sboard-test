@@ -13,7 +13,7 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
 
-    const [displayNav, setDisplayNav] = useState<'flex' | 'none'>('flex')
+    const [displayNav, setDisplayNav] = useState<'flex' | 'none'>('none')
 
     const toggleNavBar = () => setDisplayNav(displayNav === 'flex' ? 'none' : 'flex')
 
@@ -33,9 +33,9 @@ export default function RootLayout({
                             <NavLi>
                                 <NavLink href="/login" >Войти</NavLink>
                             </NavLi>
-                            <NavLi>
-                                <NavLink href="/register" >Зарегистрироваться</NavLink>
-                            </NavLi>
+                            {/*<NavLi>*/}
+                            {/*    <NavLink href="/register" >Зарегистрироваться</NavLink>*/}
+                            {/*</NavLi>*/}
                         </MainNav>
                     </Bar>
                     {children}

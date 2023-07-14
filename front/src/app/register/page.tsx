@@ -1,8 +1,11 @@
 'use client'
 
-import React from 'react';
+import React, {useState} from 'react';
 import {useForm} from "react-hook-form";
-import {Button, Form, FormContainer, Input, Label} from "@/components/form";
+import {PrimaryButton, ErrorLabel, Form, FormContainer, Input, Label, Button} from "@/components/form";
+import {register as registerApi, RegisterResponse} from "@/utils/api";
+import {useRouter} from "next/navigation";
+import Link from "next/link";
 
 interface RegistrationFormData {
     firstName: string;
@@ -12,11 +15,17 @@ interface RegistrationFormData {
     phone: string;
 }
 
-const LoginForm: React.FC = () => {
+const RegisterForm: React.FC = () => {
+    const router = useRouter()
     const { register, handleSubmit } = useForm<RegistrationFormData>();
+    const [registerResponse, setRegisterResponse] = useState<RegisterResponse>()
 
-    const onSubmit = (data: RegistrationFormData) => {
-        console.log(data);
+    const onSubmit = async (data: RegistrationFormData) => {
+        const res = await registerApi(data)
+        setRegisterResponse(res)
+        if (res.user) {
+            await router.push('/login')
+        }
     };
 
     return (
@@ -38,12 +47,13 @@ const LoginForm: React.FC = () => {
                 <Label>Телефон</Label>
                 <Input type="tel" {...register('phone')} />
 
-                <Button type="submit">Зарегистрироваться</Button>
+                <PrimaryButton type="submit">Зарегистрироваться</PrimaryButton>
+                <ErrorLabel>{registerResponse?.statusCode} {registerResponse?.error}</ErrorLabel>
             </Form>
 
-            <Button>Войти</Button>
+            <Link href='/login'>Войти</Link>
         </FormContainer>
     );
 };
 
-export default LoginForm;
+export default RegisterForm;
