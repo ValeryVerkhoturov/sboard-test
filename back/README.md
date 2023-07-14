@@ -1,35 +1,12 @@
 # Awesome NestJS Boilerplate v9
 
-[![Awesome NestJS](https://img.shields.io/badge/Awesome-NestJS-blue.svg?longCache=true&style=flat-square)](https://github.com/juliandavidmr/awesome-nestjs)
-
-> This is an ever-evolving, very opinionated architecture and dev environment for new node projects using [NestJS](https://nestjs.com). Questions, feedback, and for now, even bikeshedding are welcome. 😄
-
 ## Getting started
 
 ```bash
-# 1. Clone the repository or click on "Use this template" button.
-npx degit NarHakobyan/awesome-nest-boilerplate my-nest-app
-
-# 2. Enter your newly-cloned folder.
-cd my-nest-app
-
-# 3. Create Environment variables file.
 cp .env.example .env
 
-# 3. Install dependencies. (Make sure yarn is installed: https://yarnpkg.com/lang/en/docs/install)
-yarn
+docker compose up
 ```
-
-## Checklist
-
-When you use this template, try follow the checklist to update your info properly
-
-- [ ] Change the author name in `LICENSE`
-- [ ] Change configurations in `.env`
-- [ ] Remove the `.github` folder which contains the funding info
-- [ ] Clean up the README.md file
-
-And, enjoy :)
 
 
 ### Development
@@ -47,8 +24,6 @@ To build the App, run
 ```bash
 yarn build:prod
 ```
-
-And you will see the generated file in `dist` that ready to be served.
 
 ## Features
 

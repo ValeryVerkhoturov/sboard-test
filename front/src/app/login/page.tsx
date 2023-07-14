@@ -1,11 +1,12 @@
 "use client"
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 import {PrimaryButton, ErrorLabel, Form, FormContainer, Input} from "@/components/form";
 import {login, LoginResponse} from "@/utils/api";
 import {useTokenStore} from "@/utils/store/token-store";
 import {useUserStore} from "@/utils/store/user-store";
+import {useRouter} from "next/navigation";
 
 type LoginFormData = {
     email: string
@@ -15,15 +16,25 @@ type LoginFormData = {
 const LoginForm: React.FC = () => {
     const { register, handleSubmit } = useForm<LoginFormData>();
     const [loginResponse, setLoginResponse] = useState<LoginResponse>()
-    const { token, setToken } = useTokenStore()
-    const { user, setUser } = useUserStore()
+    const {token, setToken} = useTokenStore()
+    const {setUser } = useUserStore()
+    const router = useRouter()
 
     const onSubmit = async (data: LoginFormData) => {
         const res =  await login({email: data.email, password: data.password})
         setLoginResponse(res)
         setToken(res.token?.accessToken)
         setUser(res.user)
+        if (res.user) {
+            router.push('/me')
+        }
     };
+
+    useEffect(() => {
+        if (token) {
+            router.push('/me')
+        }
+    })
 
     return (
         <FormContainer>

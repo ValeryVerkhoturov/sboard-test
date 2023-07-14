@@ -1,6 +1,6 @@
 'use client'
 
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 import {PrimaryButton, ErrorLabel, Form, FormContainer, Input, Label, Button} from "@/components/form";
 import {register as registerApi, RegisterResponse} from "@/utils/api";
@@ -50,8 +50,6 @@ const RegisterForm: React.FC = () => {
                 <PrimaryButton type="submit">Зарегистрироваться</PrimaryButton>
                 <ErrorLabel>{registerResponse?.statusCode} {registerResponse?.error}</ErrorLabel>
             </Form>
-
-            <Link href='/login'>Войти</Link>
         </FormContainer>
     );
 };
