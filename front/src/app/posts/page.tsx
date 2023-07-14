@@ -30,6 +30,12 @@ const Posts: React.FC = () => {
         }
     }, [token])
 
+    const edtPost = (postId: string) => {
+        return () => {
+            router.push(`/posts/${postId}/update`)
+        }
+    }
+
     const delPost = (postId: string, token: string) => {
         return async () => {
             await deletePost(postId, token)
@@ -48,6 +54,7 @@ const Posts: React.FC = () => {
                         <h2>{post.translations[0]?.title}</h2>
                         <p>{post.translations[0]?.description}</p>
                         <p>{formatter.format(new Date(post.createdAt))}</p>
+                        <button onClick={edtPost(post.id)}>Редактировать</button>
                         <button onClick={delPost(post.id, token)}>Удалить</button>
                     </PostItem>
                 ))}
