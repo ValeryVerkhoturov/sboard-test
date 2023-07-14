@@ -21,13 +21,13 @@ export default function NavBar() {
             </NavBarToggle>
             <Logo href="#">logo</Logo>
             <MainNav $display={displayNav}>
-                <NavLi>
-                    <NavLink href="/posts" >Посты</NavLink>
-                </NavLi>
                 {token ? (
                     <>
                         <NavLi>
-                            {user && <NavLink href="/me">Профиль</NavLink>}
+                            <NavLink href="/posts" >Посты</NavLink>
+                        </NavLi>
+                        <NavLi>
+                            {user && <NavLink href="/me">{user.firstName}</NavLink>}
                         </NavLi>
                         <NavLi>
                             <NavButton onClick={logout} >Выйти</NavButton>

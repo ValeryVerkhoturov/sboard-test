@@ -19,7 +19,7 @@ const UserPage: React.FC = () => {
 
     return (
         <div>
-            <h1>User Info</h1>
+            <h1>Пользователь</h1>
             {user && <UserInfo {...user} />}
         </div>
     );

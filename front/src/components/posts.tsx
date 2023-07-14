@@ -7,6 +7,7 @@ export const PostContainer = styled.div`
 `;
 
 export const PostItem = styled.div`
+  min-width: 400px;
   background-color: #f0f0f0;
   padding: 10px;
   margin-bottom: 10px;
